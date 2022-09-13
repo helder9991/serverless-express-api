@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "dda5e0ad-6651-4ce9-9efb-b837e5dc411a",
+		"name": "Employee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12036505"
+	},
+	"item": [
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nome\": \"John\",\r\n\t\"idade\": 21,\r\n\t\"cargo\": \"TI\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/employee",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee"
+					]
+				},
+				"description": "Rota utilizada para a criação de um funcionário\n\n| **Status Code** | **Mensagem** | **Significado** |\n| --- | --- | --- |\n| 201 |  | Usuário criado com sucesso |\n| 400 | Validation Fails | O nome, idade ou cargo estão inválidos |"
+			},
+			"response": [
+				{
+					"name": "Create Employee",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nome\": \"John\",\r\n\t\"idade\": 21,\r\n\t\"cargo\": \"TI\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/employee",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "83"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"53-hemj7DxbEtAWoRhLRQ5A8yZ93wE\""
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 07:34:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"37276350-27b7-4542-805e-3df0484827e7\",\n    \"nome\": \"John\",\n    \"idade\": 21,\n    \"cargo\": \"TI\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/employee",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee"
+					]
+				},
+				"description": "Rota utilizada para listar os funcionários cadastrados\n\n| **Status Code** | **Mensagem** | **Significado** |\n| --- | --- | --- |\n| 200 |  | Listagem realizada com sucesso |"
+			},
+			"response": [
+				{
+					"name": "List Employee",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/employee",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "170"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"aa-+XcpUjlkqQtVuyIMl6ELV8g3vt4\""
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "accept-ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 07:36:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"37276350-27b7-4542-805e-3df0484827e7\",\n        \"nome\": \"John\",\n        \"idade\": 21,\n        \"cargo\": \"TI\"\n    },\n    {\n        \"id\": \"38fd241a-cdc7-4aba-849c-0778518cd65b\",\n        \"nome\": \"Marie\",\n        \"idade\": 22,\n        \"cargo\": \"TI\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Show Employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/employee/37276350-27b7-4542-805e-3df0484827e7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee",
+						"37276350-27b7-4542-805e-3df0484827e7"
+					]
+				},
+				"description": "Rota utilizada para mostrar as informações de um funcionário cadastrados\n\n| **Status Code** | **Mensagem** | **Significado** |\n| --- | --- | --- |\n| 200 |  | Listagem realizada com sucesso |\n| 400 | Employee does not exist | Funcionário não existe |\n| 400 | Validation Fails | Id inválido |"
+			},
+			"response": [
+				{
+					"name": "Show Employee",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/employee/37276350-27b7-4542-805e-3df0484827e7",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"employee",
+								"37276350-27b7-4542-805e-3df0484827e7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "83"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"53-hemj7DxbEtAWoRhLRQ5A8yZ93wE\""
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "accept-ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 07:36:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"37276350-27b7-4542-805e-3df0484827e7\",\n    \"nome\": \"John\",\n    \"idade\": 21,\n    \"cargo\": \"TI\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"John 2\",\r\n    \"idade\": 22,\r\n    \"cargo\": \"QI\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/employee/37276350-27b7-4542-805e-3df0484827e7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee",
+						"37276350-27b7-4542-805e-3df0484827e7"
+					]
+				},
+				"description": "Rota utilizada para a atualizar um funcionário\n\n| **Status Code** | **Mensagem** | **Significado** |\n| --- | --- | --- |\n| 200 |  | Funcionário atualizado com sucesso |\n| 400 | Validation Fails | O ID, nome, idade ou cargo estão inválidos |\n| 400 | Employee does not exist | Funcionário não existe |"
+			},
+			"response": [
+				{
+					"name": "Update Employee",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"John 2\",\r\n    \"idade\": 22,\r\n    \"cargo\": \"QI\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/employee/37276350-27b7-4542-805e-3df0484827e7",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"employee",
+								"37276350-27b7-4542-805e-3df0484827e7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "85"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"55-lqNR/dlmJlt0SfphVG/z6Yq7/l8\""
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 07:37:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"37276350-27b7-4542-805e-3df0484827e7\",\n    \"nome\": \"John 2\",\n    \"idade\": 22,\n    \"cargo\": \"QI\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/employee/37276350-27b7-4542-805e-3df0484827e7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee",
+						"37276350-27b7-4542-805e-3df0484827e7"
+					]
+				},
+				"description": "Rota utilizada para a deletar um funcionário\n\n| **Status Code** | **Mensagem** | **Significado** |\n| --- | --- | --- |\n| 204 |  | Funcionário deletado com sucesso |\n| 400 | Validation Fails | ID inválido |\n| 400 | Employee does not exist | Funcionário não existe |"
+			},
+			"response": [
+				{
+					"name": "Delete Employee",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/employee/37276350-27b7-4542-805e-3df0484827e7",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"employee",
+								"37276350-27b7-4542-805e-3df0484827e7"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 07:38:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
