@@ -29,7 +29,7 @@ class FakeEmployeeRepository implements IEmployeeRepository {
     return this.repository
   }
 
-  async show(id: string): Promise<Employee | undefined> {
+  async show(id: string): Promise<Employee | undefined | null> {
     const employee = this.repository.find((employee) => employee.id === id)
 
     return employee

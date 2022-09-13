@@ -1,6 +1,7 @@
 import 'reflect-metadata'
 import serverless from 'serverless-http'
 import express, { NextFunction } from 'express'
+import 'express-async-errors'
 import cors from 'cors'
 
 import { connection } from './database/typeorm'

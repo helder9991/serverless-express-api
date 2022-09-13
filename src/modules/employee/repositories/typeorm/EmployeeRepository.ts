@@ -32,7 +32,7 @@ class EmployeeRepository implements IEmployeeRepository {
     return employees
   }
 
-  async show(id: string): Promise<Employee> {
+  async show(id: string): Promise<Employee | undefined | null> {
     const employee = await this.repository.findOneBy({ id })
 
     return employee
