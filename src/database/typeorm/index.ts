@@ -1,6 +1,6 @@
-import 'dotenv/config';
-import path from 'path';
-import { DataSource } from 'typeorm';
+import 'dotenv/config'
+import path from 'path'
+import { DataSource } from 'typeorm'
 
 const connection = new DataSource({
   type: 'postgres',
@@ -8,10 +8,8 @@ const connection = new DataSource({
   host: process.env.DB_HOST,
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  entities: [path.resolve(__dirname,'..', '..', 'modules', '**' ,'entities', '**.js')],
-  synchronize: false,
-});
+  entities: [path.resolve(__dirname, '..', '..', 'modules', '**', 'entities', '**.js')],
+  synchronize: false
+})
 
-connection.initialize();
-
-export { connection };
+export { connection }

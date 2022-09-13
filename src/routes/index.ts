@@ -1,8 +1,8 @@
-import { Router } from "express";
+import { Router } from 'express'
 
-import employeeRoutes from "./employee.routes";
+import employeeRoutes from './employee.routes'
 
-const routes = Router();
+const routes = Router()
 
 routes.use('/employee', employeeRoutes)
 
