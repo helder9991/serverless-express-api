@@ -29,7 +29,7 @@ describe('ListEmployee', () => {
     })
   })
 
-  it('Should be able to List a new Employee', async () => {
+  it('Should be able to list employee', async () => {
     const employees = await listEmployee.execute()
 
     expect(employees).toEqual([employee1, employee2])
