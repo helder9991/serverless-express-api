@@ -10,7 +10,7 @@ let createEmployee: CreateEmployeeUseCase
 
 let employee: Employee
 
-describe('ShowEmployee', () => {
+describe('UpdateEmployee', () => {
   beforeEach(async () => {
     fakeEmployeeRepository = new FakeEmployeeRepository()
     updateEmployee = new UpdateEmployeeUseCase(fakeEmployeeRepository)
