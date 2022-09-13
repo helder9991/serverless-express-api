@@ -8,6 +8,7 @@ interface IEmployeeRepository {
   list: () => Promise<Employee[]>
   show: (id: string) => Promise<Employee | undefined | null>
   update: (data: IUpdateEmployeeDTO) => Promise<Employee>
+  delete: (id: string) => Promise<Boolean>
 }
 
 export { IEmployeeRepository }

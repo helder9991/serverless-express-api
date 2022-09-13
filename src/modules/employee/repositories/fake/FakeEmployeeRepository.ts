@@ -50,6 +50,15 @@ class FakeEmployeeRepository implements IEmployeeRepository {
 
     return employee
   }
+
+  async delete(id: string): Promise<Boolean> {
+    const employeeSize = this.repository.length
+    this.repository = this.repository.filter(employee => employee.id !== id)
+
+    const deleted = this.repository.length !== employeeSize
+
+    return deleted
+  }
 }
 
 export { FakeEmployeeRepository }
