@@ -11,9 +11,9 @@ class CreateEmployeeController {
 
   constructor() {
     this.schema = Yup.object().shape({
-      nome: Yup.string().required(),
-      idade: Yup.number().positive().required(),
-      cargo: Yup.string().required()
+      nome: Yup.string().strict().required(),
+      idade: Yup.number().strict().positive().required(),
+      cargo: Yup.string().strict().required()
     })
   }
 

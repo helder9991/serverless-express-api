@@ -11,7 +11,7 @@ class ShowEmployeeController {
 
   constructor() {
     this.schema = Yup.object().shape({
-      id: Yup.string().required()
+      id: Yup.string().uuid().required()
     })
   }
 
