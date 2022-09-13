@@ -3,6 +3,7 @@ import { v4 } from 'uuid'
 
 import { connection } from '../../../../database/typeorm'
 import { ICreateEmployeeDTO } from '../../dtos/ICreateEmployeeDTO'
+import { IUpdateEmployeeDTO } from '../../dtos/IUpdateEmployeeDTO'
 import { Employee } from '../../entities/Employee'
 import { IEmployeeRepository } from '../interfaces/IEmployeeRepository'
 
@@ -34,6 +35,17 @@ class EmployeeRepository implements IEmployeeRepository {
 
   async show(id: string): Promise<Employee | undefined | null> {
     const employee = await this.repository.findOneBy({ id })
+
+    return employee
+  }
+
+  async update({ id, nome, idade, cargo }: IUpdateEmployeeDTO): Promise<Employee> {
+    const employee = await this.repository.save({
+      id,
+      nome,
+      idade,
+      cargo
+    })
 
     return employee
   }
