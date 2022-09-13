@@ -53,7 +53,7 @@ class EmployeeRepository implements IEmployeeRepository {
   async delete(id: string): Promise<Boolean> {
     const employee = await this.repository.delete(id)
 
-    const deleted = employee.affected > 0
+    const deleted = !!employee.affected
 
     return deleted
   }
